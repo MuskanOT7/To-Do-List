@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 25px;
+}
+
+.todo-app {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.todo-app h2 {
+    color: #333;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.todo-app h2 img { /* If you still have an image next to "To-Do List" title */
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input[type="text"] { /* Targeting the text input specifically */
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5722;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background: #e64a19;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px; /* Adjust padding to make space for the checkbox */
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center;
+}
+
+ul li input[type="checkbox"] {
+    margin-right: 15px; /* Space between checkbox and text */
+    -webkit-appearance: none; /* Hide default checkbox */
+    -moz-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 5px; /* Change to a square shape */
+    border: 2px solid #ccc; /* Unchecked state border */
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+ul li input[type="checkbox"]:checked {
+    border-color: #ff5722; /* Checked state border color */
+    background-color: #ff5722; /* Checked state background color */
+}
+
+ul li input[type="checkbox"]:checked::after {
+    content: '\2713'; /* A checkmark symbol */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+ul li.checked span.task-text { /* Apply line-through to the task text only */
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li .delete-btn { /* Style for the delete button (X) */
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+ul li .delete-btn:hover {
+    background: #edeef0;
+}
